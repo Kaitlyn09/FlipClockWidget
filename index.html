@@ -1,34 +1,29 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Flip Clock</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css">
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: transparent;
-        }
-        #flipdown {
-            width: 300px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Flip Clock</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipclock@0.7.8/compiled/flipclock.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: transparent;
+    }
+  </style>
 </head>
 <body>
-    <div id="flipdown"></div>
+  <div class="clock"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.js"></script>
-    <script>
-        function getTime() {
-            const now = new Date();
-            return now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-        }
-        
-        const flipdown = new FlipDown(getTime())
-            .start();
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flipclock@0.7.8/compiled/flipclock.min.js"></script>
+  <script>
+    var clock = $('.clock').FlipClock({
+      clockFace: 'TwentyFourHourClock',
+      showSeconds: true
+    });
+  </script>
 </body>
 </html>
